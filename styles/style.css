@@ -1,3 +1,4 @@
+/* Reset Default Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +11,13 @@ body {
   color: #333;
 }
 
+/* Jumbotron */
 .jumbotron {
   width: 100%;
   height: 300px;
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .jumbotron img {
@@ -36,6 +39,12 @@ body {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Header (contains jumbotron and navbar) */
+header {
+  width: 100%;
+}
+
+/* Navbar */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -134,29 +143,15 @@ body {
   color: #f99a34;
 }
 
+/* Main: Contains content and aside as siblings */
 main {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.content-container {
   display: flex;
   gap: 20px;
   align-items: flex-start;
   padding: 20px;
 }
 
-.content-container main {
-  flex: 2;
-}
-
-.content-container aside {
-  flex: 1;
-  max-width: 300px;
-}
-
+/* Content Cards Container */
 #content {
   flex: 2 1 70%;
   display: flex;
@@ -166,6 +161,7 @@ main {
   align-items: flex-start;
 }
 
+/* Featured Image */
 .featured-image {
   width: 100%;
   max-width: 100%;
@@ -175,6 +171,7 @@ main {
   margin: 0 auto;
 }
 
+/* Recipe Cards */
 .card {
   flex: 0 0 48%;
   max-width: 48%;
@@ -199,12 +196,13 @@ main {
   text-align: center;
 }
 
+/* Aside inside Main */
 #profile-website {
   flex: 1 1 25%;
   background: #f4f4f4;
   padding: 15px;
   border-radius: 10px;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 #profile-website h2 {
@@ -218,7 +216,9 @@ main {
   border-radius: 10px;
 }
 
+/* Footer */
 footer {
+  width: 100%;
   text-align: center;
   background-color: #333;
   color: #ffffff;
@@ -226,21 +226,20 @@ footer {
   margin-top: 40px;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   main {
     flex-direction: column;
   }
 
-  .content-container {
-    flex-direction: column;
-  }
-
-  .content-container main,
-  .content-container aside {
+  /* On mobile, content and aside become full width */
+  #content,
+  #profile-website {
     flex: 1 1 100%;
     max-width: 100%;
   }
 
+  /* Recipe cards stack vertically */
   .card {
     flex: 0 0 100%;
     max-width: 100%;
